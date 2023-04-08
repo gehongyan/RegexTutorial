@@ -5,7 +5,7 @@ using Xunit.Abstractions;
 
 namespace RegexTutorial;
 
-public class RegexTests
+public partial class RegexTests
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
@@ -146,4 +146,14 @@ public class RegexTests
         foreach (string result in splitResults)
             _testOutputHelper.WriteLine(result);
     }
+
+    [Fact]
+    public void RegexSourceGenerator()
+    {
+        bool isMatch = TagsRegex().IsMatch("<p>text</p>");
+        Assert.True(isMatch);
+    }
+
+    [GeneratedRegex(@"<(.*?)>(.+?)</\1>", RegexOptions.Compiled)]
+    private static partial Regex TagsRegex();
 }

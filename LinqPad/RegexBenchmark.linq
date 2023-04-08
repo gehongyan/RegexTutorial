@@ -1,14 +1,9 @@
-<Query Kind="Program">
-  <Namespace>BenchmarkDotNet.Attributes</Namespace>
-  <RuntimeVersion>7.0</RuntimeVersion>
-</Query>
-
 #load "BenchmarkDotNet"
 
 private Regex _regex;
 private Regex _compiledRegex;
 private const string Pattern = @"(?<=\().*?(?=\))";
-private const string Input = @"<p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p><p>text</p>";
+private static readonly string Input = string.Concat(Enumerable.Repeat("<p>text</p>", 1000));
 
 void Main()
 {
@@ -38,7 +33,6 @@ public void InstanceCompiled()
 {
 	_ = _compiledRegex.IsMatch(Input);
 }
-
 
 [GlobalSetup]
 public void BenchmarkSetup()

@@ -1,6 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexTutorial", "RegexTutorial\RegexTutorial.csproj", "{380E9869-DA90-4E01-8519-8D607F4B22F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexTutorial", "src\RegexTutorial\RegexTutorial.csproj", "{380E9869-DA90-4E01-8519-8D607F4B22F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks", "src\Benchmarks\Benchmarks.csproj", "{D3A160B8-9E27-4C3C-A076-48B78EFA54DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{33BDB4FF-A6D2-42EA-8423-65E6FFA7B908}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Document.md = docs\Document.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinqPad", "LinqPad", "{CCE9AD56-DE87-4A19-8426-8D65C43DE418}"
+	ProjectSection(SolutionItems) = preProject
+		LinqPad\RegexBenchmark.linq = LinqPad\RegexBenchmark.linq
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +24,9 @@ Global
 		{380E9869-DA90-4E01-8519-8D607F4B22F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{380E9869-DA90-4E01-8519-8D607F4B22F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{380E9869-DA90-4E01-8519-8D607F4B22F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3A160B8-9E27-4C3C-A076-48B78EFA54DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A160B8-9E27-4C3C-A076-48B78EFA54DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A160B8-9E27-4C3C-A076-48B78EFA54DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A160B8-9E27-4C3C-A076-48B78EFA54DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

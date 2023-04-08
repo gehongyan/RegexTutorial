@@ -168,15 +168,47 @@ RegexOptions 枚举定义了正则表达式选项，可以按位组合，常用�
 
 ### 调用方式
 
-Regex 类既可以使用静态方法调用，也可以使用实例方法调用。对于经常使用的正则表达式，可以使用实例方法调用，提交性能。
+#### 静态方法
 
 ```csharp
 Regex.IsMatch(Input, Pattern);
 Regex.IsMatch(Input, Pattern, RegexOptions.Compiled);
-_regex.IsMatch(Input);
-_compiledRegex.IsMatch(Input);
+```
+
+#### 实例方法
+
+```csharp
+var regex = new Regex(Pattern);
+var compiledRegex = new Regex(Pattern, RegexOptions.Compiled);
+regex.IsMatch(Input);
+compiledRegex.IsMatch(Input);
+```
+
+#### 源代码生成器
+
+.NET 7 中新增了正则表达式源代码生成器，可以通过正则表达式生成源代码，然后直接调用源代码中的方法。
+
+```csharp
+[GeneratedRegex(Pattern, RegexOptions.Compiled)]
+private static partial Regex MyRegex();
+
+// 在方法中调用
+bool isMatch = MyRegex().IsMatch(Input);
 ```
 
 [示例用文本 1](https://regex101.com/r/VG3sYF/1)
 
 [示例用文本 2](https://regex101.com/r/Hu9kmq/1)
+
+## 实用工具
+
+- 正则表达式在线测试工具
+  - [Regex101](https://regex101.com/)
+  - [Regexr](https://regexr.com/)
+- 正则表达式可视化工具
+  - [Regexper](https://regexper.com/)
+
+## 参考文献
+
+- [.NET 正则表达式 | Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expressions)
+- [Regular expression - Wikipedia](https://en.wikipedia.org/wiki/Regular_expression)
