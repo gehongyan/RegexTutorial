@@ -196,6 +196,24 @@ private static partial Regex MyRegex();
 bool isMatch = MyRegex().IsMatch(Input);
 ```
 
+## 在 IDE 中的用法
+
+Visual Studio 和 JetBrains Rider 等主流代码编辑工具或集成开发环境都是支持通过正则表达式进行搜索与替换的。
+以替换双斜线代码注释为三斜线 XML 注释为例，可以使用以下的正则表达式进行搜索替换：
+
+- 匹配：`(?<!/)//(?!/)\s*(?<comment>.+)`
+- 替换：`/// <summary> ${comment} </summary>`
+
+要替换为三行展开的 XML 注释，则可以使用以下的正则表达式进行搜索替换：
+
+- 匹配：`(?<space> +)(?<!/)//(?!/)\s*(?<comment>.+)`
+- 替换：
+  ```
+  ${space}/// <summary>
+  ${space}///     ${comment}
+  ${space}/// </summary>
+  ```
+
 [示例用文本 1](https://regex101.com/r/VG3sYF/1)
 
 [示例用文本 2](https://regex101.com/r/Hu9kmq/1)
