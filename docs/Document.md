@@ -214,6 +214,11 @@ Visual Studio 和 JetBrains Rider 等主流代码编辑工具或集成开发环�
   ${space}/// </summary>
   ```
 
+再以为所有的属性添加 `JsonPropertyName` 特性为例，可以使用以下的正则表达式进行搜索替换：
+
+- 匹配：`(?<all>public\s(?!class)\S+\s(?<name>\S+))`
+- 替换：`[JsonPropertyName("${name}")] ${all}`
+
 [示例用文本 1](https://regex101.com/r/VG3sYF/1)
 
 [示例用文本 2](https://regex101.com/r/Hu9kmq/1)

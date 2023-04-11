@@ -1,4 +1,6 @@
-﻿namespace RegexTutorial;
+﻿using System.Text.Json.Serialization;
+
+namespace RegexTutorial;
 
 // 表示请求开发票的 Dto 对象
 public class InvoiceRequestDto
@@ -16,16 +18,16 @@ public class InvoiceRequestDto
     public string? BankName { get; set; }
 
     //   银行账户
-    public string? BankAccount { get; set; }
+    public string? bankAccount { get; set; }
 
     // 注册地址
-    public string? RegistrationAddress { get; set; }
+    public string? registration_address { get; set; }
 
     // 注册电话
     public string? RegistrationPhoneNumber { get; set; }
 
     // 注册邮箱
-    public string? RegistrationEmail { get; set; }
+    public string? REGISTRATION_EMAIL { get; set; }
 
     // 发票明细列表
     public List<InvoiceItemDto>? InvoiceItems { get; set; }
