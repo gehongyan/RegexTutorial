@@ -1,4 +1,25 @@
-﻿# .NET 7
+﻿# .NET 8
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1485/22H2/2022Update/SunValley2)
+13th Gen Intel Core i7-13700F, 1 CPU, 24 logical and 16 physical cores
+.NET SDK=8.0.100-preview.3.23178.7
+[Host]     : .NET 8.0.0 (8.0.23.17408), X64 RyuJIT AVX2
+DefaultJob : .NET 8.0.0 (8.0.23.17408), X64 RyuJIT AVX2
+
+
+|                  Method |       Mean |   Error |  StdDev |
+|------------------------:|-----------:|--------:|--------:|
+|                  Static | 2,482.0 us | 7.90 us | 7.39 us |
+|          StaticCompiled |   219.9 us | 0.82 us | 0.77 us |
+|                Instance | 2,575.7 us | 5.12 us | 4.79 us |
+|        InstanceCompiled |   223.3 us | 0.57 us | 0.53 us |
+|         SourceGenerator |   173.8 us | 1.61 us | 1.34 us |
+| SourceGeneratorCompiled |   172.4 us | 1.34 us | 1.25 us |
+
+
+# .NET 7
 
 // * Summary *
 
